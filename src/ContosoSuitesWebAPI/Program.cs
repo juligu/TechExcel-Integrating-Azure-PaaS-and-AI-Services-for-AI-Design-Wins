@@ -116,7 +116,7 @@ app.MapPost("/Chat", async Task<string> (HttpRequest request) =>
 app.MapGet("/Vectorize", async (string text, [FromServices] IVectorizationService vectorizationService) =>
 {
     var embeddings = await vectorizationService.GetEmbeddings(text);
-    return embeddings;
+    return embeddings; 
 })
     .WithName("Vectorize")
     .WithOpenApi();
